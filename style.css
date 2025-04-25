@@ -98,3 +98,51 @@ footer {
   background: #222;
   color: white;
 }
+/* MAIN - CONTENT STYLING */
+.about-me, .achievements, .interests {
+  margin-bottom: 30px;
+}
+
+.about-me h2 {
+  color: #e91e63;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.about-me p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.profile-pic {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* ACHIEVEMENTS */
+.achievements h3, .interests h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.achievements ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.achievements li {
+  padding: 5px 0;
+}
+
+/* FOOTER LINKS */
+footer a {
+  color: #e91e63;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
