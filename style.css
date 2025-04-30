@@ -1,16 +1,36 @@
+/* ==========================================================================
+   Import Google Fonts
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400;500;700&display=swap');
+
+
+/* ==========================================================================
+   RESET & BASE STYLING
+   ========================================================================== */
+/* Reset margin, padding, and box-sizing across all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Base body styles: font, background, text color, line height */
 body {
-  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-family: 'Roboto', sans-serif;               /* Main text font */
   background: linear-gradient(135deg, #e0f7fa, #fce4ec);
-  background-attachment: fixed;
-  color: #333;
+  color: #4a3c6f;                                   /* Softer theme color */
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
+/* Highlight (text selection) styling */
+::-moz-selection { background-color: #f8bbd0; color: #000; }
+::selection       { background-color: #f8bbd0; color: #000; }
+
+
+/* ==========================================================================
+   LAYOUT GRID
+   ========================================================================== */
 .container {
   display: grid;
   grid-template-areas:
@@ -19,64 +39,125 @@ body {
     "footer footer footer";
   grid-template-columns: 200px 1fr 200px;
   grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
+  min-height: 100vh;                               /* Fill full viewport */
 }
 
-/* HEADER */
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
 header {
   grid-area: header;
   display: flex;
   align-items: center;
   gap: 20px;
   background: #6200ea;
-  color: white;
+  color: #fff;
   padding: 20px;
+  font-family: 'Poppins', sans-serif;              /* Header font */
+  letter-spacing: 1px;                             /* Slight spacing */
 }
 
+/* Logo/avatar in header */
 header img {
   height: 60px;
   width: 60px;
-  border-radius: 50%;
+  border-radius: 50%;                              /* Circular */
 }
 
-/* LEFT MENU */
-.left-menu {
-  grid-area: left-menu;
-  background: rgba(255, 255, 255, 0.8);
+/* Right-side nav links */
+.top-right {
+  margin-left: auto;
+  display: flex;
+  gap: 15px;
+}
+
+.login, .signup {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: background 0.3s, padding 0.3s;
+}
+
+.login:hover, .signup:hover {
+  background-color: #d81b60;
+  padding: 6px 16px;                               /* Subtle grow on hover */
+}
+
+
+/* ==========================================================================
+   SIDEBARS
+   ========================================================================== */
+.left-menu, .right-menu {
+  background: rgba(255, 255, 255, 0.9);
   padding: 20px;
+  border-radius: 8px;                              /* Rounded corners */
 }
 
-.left-menu ul {
+.left-menu { grid-area: left-menu; }
+.right-menu{ grid-area: right-menu; }
+
+/* Sidebar link list styling */
+.left-menu ul, .right-menu ul {
   list-style: none;
 }
-
-.left-menu li a {
+.left-menu li a,
+.right-menu li a {
   display: block;
   margin: 10px 0;
   color: #6200ea;
   text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.left-menu li a:hover,
+.right-menu li a:hover {
+  color: #d81b60;
 }
 
-.left-menu li a:hover {
-  font-weight: bold;
-}
 
-/* MAIN CONTENT */
+/* ==========================================================================
+   MAIN CONTENT
+   ========================================================================== */
 main {
   grid-area: main;
   padding: 20px;
 }
 
-.about-me, .achievements, .projects, .interests, .skills, .hire-me {
-  margin-bottom: 40px;
+main section {
+  margin-bottom: 40px;                             /* Space between sections */
 }
 
-.about-me h2, .achievements h3, .projects h3, .interests h3, .skills h3 {
-  color: #6200ea;
-  margin-bottom: 10px;
+
+/* ==========================================================================
+   SECTION HEADERS
+   ========================================================================== */
+/* Gradient‐clipped text for section titles */
+.about-me h2,
+.achievements h3,
+.projects h3,
+.interests h3,
+.skills h3,
+.motto h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
   font-size: 2rem;
+  background: linear-gradient(90deg, #6200ea, #d81b60);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 
+
+/* ==========================================================================
+   PROFILE PICTURE
+   ========================================================================== */
 .profile-pic {
   display: block;
   margin: 20px auto;
@@ -87,114 +168,177 @@ main {
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
-/* PROJECTS */
+
+/* ==========================================================================
+   PROJECTS
+   ========================================================================== */
 .project-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 20px;                                       /* Gap between cards */
 }
 
 .project-card {
-  background: white;
+  background: #fff;
   padding: 15px;
-  border-radius: 10px;
-  flex: 1 1 45%;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  flex: 1 1 45%;                                   /* Two per row */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+/* Project image styling */
 .project-card img {
   width: 100%;
+  height: 200px;
+  object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
+  background-color: #fff;                          /* White frame */
+  border: 2px solid #fff;                         /* Mask border edges */
 }
 
+/* Project title & text */
 .project-card h4 {
-  margin: 10px 0 5px;
+  margin: 10px 0;
   color: #d81b60;
+  font-family: 'Poppins', sans-serif;
+}
+.project-card p {
+  font-size: 0.95rem;
+  color: #5c5c7a;
+  flex-grow: 1;
 }
 
-/* SKILLS */
+
+/* ==========================================================================
+   SKILLS LIST
+   ========================================================================== */
+/* Remove default bullets, add custom gradient dots */
 .skills ul {
-  list-style: disc inside;
+  list-style: none;
+  padding-left: 0;
   margin-top: 10px;
 }
-
 .skills li {
-  margin-bottom: 8px;
+  position: relative;
+  margin-bottom: 12px;
+  padding-left: 24px;                              /* Space for dot */
+  font-weight: 500;
+  color: #5c5c7a;
+}
+.skills li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6200ea, #d81b60);
+}
+.skills li:hover {
+  color: #6200ea;                                  /* Highlight on hover */
 }
 
-/* HIRE ME BUTTON */
+
+/* ==========================================================================
+   MOTTO / QUOTE
+   ========================================================================== */
+.motto {
+  text-align: center;
+}
+.motto blockquote {
+  font-style: italic;
+  color: #4a2c6f;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+/* ==========================================================================
+   HIRE ME BUTTON
+   ========================================================================== */
 .hire-me {
   text-align: center;
 }
-
 .hire-me .btn {
   background-color: #d81b60;
-  color: white;
+  color: #fff;
   padding: 12px 25px;
   border-radius: 30px;
   text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s;
 }
-
 .hire-me .btn:hover {
   background-color: #c2185b;
-}
-
-/* RIGHT MENU */
-.right-menu {
-  grid-area: right-menu;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-}
-
-.right-menu ul {
-  list-style: none;
-}
-
-.right-menu li a {
-  display: block;
-  margin: 10px 0;
-  color: #6200ea;
-  text-decoration: none;
-}
-
-.right-menu li a:hover {
-  font-weight: bold;
-}
-.motto {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.motto blockquote {
-  font-style: italic;
-  color: #4a2c6f; 
-  background: rgba(255, 255, 255, 0.8);
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
 }
 
 
-/* FOOTER */
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
 footer {
   grid-area: footer;
   text-align: center;
   padding: 20px;
   background: #311b92;
-  color: white;
+  color: #f3e5f5;
+  font-family: 'Roboto', sans-serif;
 }
 
 .footer-links a {
-  color: #ff80ab;
+  color: #ffb3c6;
   margin: 0 8px;
   text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.footer-links a:hover {
+  color: #f06292;
 }
 
-.footer-links a:hover {
-  text-decoration: underline;
+
+/* ==========================================================================
+   RESPONSIVE (MOBILE)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "main"
+      "left-menu"
+      "right-menu"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+  .left-menu, .right-menu {
+    padding: 10px 20px;
+  }
+  .project-list {
+    flex-direction: column;                        /* Stack cards vertically */
+  }
+  .project-card {
+    flex: 1 1 100%;
+    height: auto;
+  }
+  .project-card img {
+    height: 200px;
+  }
 }
