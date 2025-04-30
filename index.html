@@ -1,107 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Meta tags for character encoding and responsive behavior -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Page title displayed in browser tab -->
   <title>Abhilashinie | Web Developer</title>
-  <link rel="stylesheet" href="style.css">
+  
+  <!-- Google Fonts: Poppins & Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon displayed in browser tab -->
+  <link rel="icon" href="cube.avif" type="image/avif">
 </head>
+
 <body>
   <div class="container">
+    <!-- ========================= HEADER ========================= -->
     <header>
-      <img src="Rubiks-Cube.jpeg" alt="Brand Logo" />
+      <!-- Logo or brand mark -->
+      <img src="cube.avif" alt="Brand Logo" />
+      <!-- Main heading / introduction -->
       <h1>Hello, I'm Abhilashinie!</h1>
+      <!-- Top-right login/signup links -->
+      <div class="top-right">
+        <a href="#" class="login"><i class="fas fa-sign-in-alt"></i> Login</a>
+        <a href="#" class="signup"><i class="fas fa-user-plus"></i> Signup</a>
+      </div>
     </header>
-
+    
+    <!-- ====================== LEFT SIDEBAR ====================== -->
     <aside class="left-menu">
       <nav>
+        <!-- Sidebar title -->
         <h3>Explore</h3>
+        <!-- Navigation links list -->
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Gallery</a></li>
+          <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="#"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+          <li><a href="#"><i class="fas fa-blog"></i> Blog</a></li>
+          <li><a href="#"><i class="fas fa-images"></i> Gallery</a></li>
         </ul>
       </nav>
     </aside>
 
+    <!-- ======================= MAIN CONTENT ======================= -->
     <main>
+      <!-- -------- About Me Section -------- -->
       <section class="about-me">
         <h2>About Me</h2>
         <p>
-          I approach challenges like a Rubik's Cube—complex, but rewarding when all the pieces fall into place. As a second-year Network and Computer Security student, I thrive on problem-solving, logical thinking, and continuous learning. Whether configuring networks or developing websites, I enjoy breaking down problems and finding efficient solutions, just like solving a puzzle.I love challenges.
+          I approach challenges like a Rubik's Cube—complex, but rewarding when all the pieces fall into place.
+          As a second-year Network and Computer Security student, I thrive on problem-solving, logical thinking, and
+          continuous learning.
         </p>
-        <img src="profile.jpg"
-             alt="Profile Photo" class="profile-pic">
+        <!-- Profile picture -->
+        <img src="profile.jpg" alt="Profile Photo" class="profile-pic">
       </section>
 
+      <!-- -------- Achievements Section -------- -->
       <section class="achievements">
         <h3>Achievements</h3>
-        <ul>
-          <li>🌟 Collaborated on group projects for website development and network security</li>
-          <li>🏆 Working on real-world network configurations and security projects</li>
-          <li>💻 Developed and launched a personal website as part of academic coursework</li>
-        </ul>
-      </section>
-
-      <section class="projects">
-        <h3>Featured Projects</h3>
-        <div class="project-list">
-          <div class="project-card">
-            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Project 1">
-            <h4>Portfolio Website</h4>
-            <p>My personal responsive portfolio built with HTML, CSS, and a touch of magic ✨.</p>
-          </div>
-          <div class="project-card">
-            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Project 2">
-            <h4>Blog Platform</h4>
-            <p>A WordPress powered blog for tech enthusiasts, crafted with love.</p>
-          </div>
+        <div>
+          <p>🌟 Collaborated on group projects for website development and network security</p>
+          <p>🏆 Working on real-world network configurations and security projects</p>
+          <p>💻 Developed and launched a personal website as part of academic coursework</p>
         </div>
       </section>
 
+      <!-- -------- Projects Section -------- -->
+      <section class="projects">
+        <h3>Featured Projects</h3>
+        <div class="project-list">
+          <!-- Single project card -->
+          <div class="project-card">
+            <img src="html-projects.jpg" alt="Project 1">
+            <h4>Project One</h4>
+            <p>This is a brief description of Project One. It showcases front-end skills using HTML, CSS, and JavaScript.</p>
+          </div>
+          <!-- Single project card -->
+          <div class="project-card">
+            <img src="node.png" alt="Project 2">
+            <h4>Project Two</h4>
+            <p>This project focuses on back-end integration with APIs. Built with Node.js and Express.</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- -------- Interests Section -------- -->
       <section class="interests">
         <h3>My Interests</h3>
         <p>I love solving Rubik's Cubes, designing user experiences, and exploring new front-end libraries like React!</p>
       </section>
 
+      <!-- -------- Skills Section -------- -->
       <section class="skills">
         <h3>Skills</h3>
-        <ul>
-          <li>HTML5 and CSS3</li>
-          <li>Responsive Design & UX/UI</li>
-          <li>Teamwork and collaboration</li>
-          <li>Problem Solving & Creative Thinking</li>
-        </ul>
+        <div>
+          <p>HTML5 and CSS3</p>
+          <p>Responsive Design & UX/UI</p>
+          <p>Teamwork and collaboration</p>
+          <p>Problem Solving & Creative Thinking</p>
+        </div>
       </section>
 
+      <!-- -------- Motto Section -------- -->
       <section class="motto">
         <h3>My Motto</h3>
-        <blockquote>
-          "Strive for progress, not perfection."
-        </blockquote>
+        <blockquote>"Strive for progress, not perfection."</blockquote>
       </section>
 
+      <!-- -------- Hire Me Call-to-Action -------- -->
       <section class="hire-me">
-        <a href="#" class="btn">Hire Me</a>
+        <a href="#" class="btn"><i class="fas fa-paper-plane"></i> Hire Me</a>
       </section>
     </main>
 
+    <!-- ====================== RIGHT SIDEBAR ====================== -->
     <aside class="right-menu">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">About Me</a></li>
-        <li><a href="#">Services</a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="#"><i class="fas fa-user"></i> About Me</a></li>
+        <li><a href="#"><i class="fas fa-cogs"></i> Services</a></li>
       </ul>
     </aside>
 
+    <!-- ======================== FOOTER ======================== -->
     <footer>
+      <!-- Copyright notice -->
       <p>© 2025 Abhilashinie Prabaharan. All rights reserved.</p>
+      <!-- Social media / external links -->
       <div class="footer-links">
-        <a href="#">LinkedIn</a> |
-        <a href="#">GitHub</a> |
-        <a href="#">Instagram</a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a> |
+        <a href="https://github.com/yourusername" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a> |
+        <a href="https://instagram.com/yourusername" target="_blank">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
       </div>
     </footer>
   </div>
