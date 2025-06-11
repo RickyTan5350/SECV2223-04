@@ -113,6 +113,36 @@
         <blockquote>"Strive for progress, not perfection."</blockquote>
       </section>
 
+      <!-- -------- Contact Form Section -------- -->
+      <section class="contact-form">
+        <h2>Contact Me</h2>
+        <form action="submit_contact.php" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <input type="tel" name="contact" placeholder="Your Contact Number" required />
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+      <!-- -------- Comments Section -------- -->
+      <section class="comments-section">
+        <h3>Leave a Comment</h3>
+        <form method="POST" action="comments.php">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <textarea name="comment" placeholder="Your Comment..." required></textarea>
+          <button type="submit">Submit Comment</button>
+        </form>
+
+          <div class="comment-list">
+            <!-- Static example comment -->
+            <div class="comment">
+              <strong>Jane Doe</strong>
+              <p>Love your website — especially the Rubik’s Cube reference!</p>
+            </div>
+          </div>
+      </section>
+
+
       <!-- -------- Hire Me Call-to-Action -------- -->
       <section class="hire-me">
         <a href="#" class="btn"><i class="fas fa-paper-plane"></i> Hire Me</a>
